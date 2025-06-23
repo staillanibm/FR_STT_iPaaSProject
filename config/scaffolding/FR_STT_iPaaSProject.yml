@@ -7,9 +7,6 @@ packages:
   gitUrl: https://github.com/staillanibm
   gitUsername: staillanibm
   gitBranch: main
-- name: WmAmazonS3Provider
-  wpmServer: https://packages.webmethods.io
-  wpmRegistry: supported
 services:
 - serviceName: project.fr_stt_ipaas.integrations:sayHello
   packages:
