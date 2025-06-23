@@ -8,12 +8,29 @@ packages:
   gitUsername: staillanibm
   gitBranch: main
 - name: sttHelloWorld
+  version: "1.0"
   gitServerName: fr_stt_github
   gitUrl: https://github.com/staillanibm
   gitUsername: staillanibm
   gitBranch: main
 services:
+- serviceName: project.fr_stt_ipaas.integrations:getFibo
+  packages:
+  - name: FR_STT_iPaaSProject
+    version: "1.0"
+  - name: sttHelloWorld
+    version: "1.0"
+- serviceName: sttHelloWorld.eu.sttlab.services:getFibo
+  packages:
+  - name: sttHelloWorld
+    version: "1.0"
+- serviceName: sttHelloWorld.eu.sttlab.services.java:calculateFibo
+  packages:
+  - name: sttHelloWorld
+    version: "1.0"
 - serviceName: project.fr_stt_ipaas.integrations:sayHello
   packages:
   - name: FR_STT_iPaaSProject
+    version: "1.0"
+  - name: sttHelloWorld
     version: "1.0"
