@@ -28,6 +28,36 @@ services:
   packages:
   - name: sttHelloWorld
     version: "1.0"
+- serviceName: project.fr_stt_ipaas.integrations:processUsers
+  packages:
+  - name: FR_STT_iPaaSProject
+    version: "1.0"
+  - name: sttHelloWorld
+    version: "1.0"
+- serviceName: sttHelloWorld.eu.sttlab.services:processUsers
+  packages:
+  - name: sttHelloWorld
+    version: "1.0"
+- serviceName: sttHelloWorld.eu.sttlab.services.s3:readFile
+  packages:
+  - name: sttHelloWorld
+    version: "1.0"
+- serviceName: pub.io:streamToString
+  packages:
+  - name: WmPublic
+    version: 11.1.0.0.2064
+- serviceName: pub.json:jsonToDocument
+  packages:
+  - name: WmPublic
+    version: 11.1.0.0.2064
+- serviceName: pub.date:getCurrentDate
+  packages:
+  - name: WmPublic
+    version: 11.1.0.0.2064
+- serviceName: sttHelloWorld.eu.sttlab.services.jdbc:insertUser
+  packages:
+  - name: sttHelloWorld
+    version: "1.0"
 - serviceName: project.fr_stt_ipaas.integrations:sayHello
   packages:
   - name: FR_STT_iPaaSProject
