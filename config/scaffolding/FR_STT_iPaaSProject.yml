@@ -56,6 +56,14 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+- serviceName: sttHelloWorld.eu.sttlab.services:getAccounts
+  packages:
+  - name: sttHelloWorld
+    version: "1.0"
+- serviceName: sttHelloWorld.eu.sttlab.services.salesforce:listAccounts
+  packages:
+  - name: sttHelloWorld
+    version: "1.0"
 - serviceName: project.fr_stt_ipaas.integrations:processUsers
   packages:
   - name: FR_STT_iPaaSProject
