@@ -7,6 +7,9 @@ packages:
   gitUrl: https://github.com/staillanibm
   gitUsername: staillanibm
   gitBranch: main
+- name: WmJDBCAdapter
+  wpmServer: https://packages.webmethods.io
+  wpmRegistry: licensed
 - name: sttHelloWorld
   version: "1.0"
   gitServerName: fr_stt_github
@@ -14,12 +17,26 @@ packages:
   gitUsername: staillanibm
   gitBranch: main
 services:
+- serviceName: project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections:Database_1
+  packages:
+  - name: FR_STT_iPaaSProject
+    version: "1.0"
+  - name: sttHelloWorld
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
 - serviceName: project.fr_stt_ipaas.integrations:getFibo
   packages:
   - name: FR_STT_iPaaSProject
     version: "1.0"
   - name: sttHelloWorld
     version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
 - serviceName: sttHelloWorld.eu.sttlab.services:getFibo
   packages:
   - name: sttHelloWorld
@@ -34,6 +51,10 @@ services:
     version: "1.0"
   - name: sttHelloWorld
     version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
 - serviceName: sttHelloWorld.eu.sttlab.services:processUsers
   packages:
   - name: sttHelloWorld
@@ -64,3 +85,54 @@ services:
     version: "1.0"
   - name: sttHelloWorld
     version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+configurationVariables:
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.networkProtocol
+  : ""
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.minimumPoolSize
+  : "1"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupBackoffSecs
+  : "10"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.maximumPoolSize
+  : "10"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.heartBeatInterval
+  : "0"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupRetryCount
+  : "0"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.trustStore
+  : ""
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.poolIncrementSize
+  : "1"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.poolable
+  : "true"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.expireTimeout
+  : "1000"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.transactionType
+  : NO_TRANSACTION
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.dbType
+  : MSSQL
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.keyStore
+  : ""
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.datasourceClass
+  : com.wm.dd.jdbcx.sqlserver.SQLServerDataSource
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.user
+  : sttlab
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.blockingTimeout
+  : "1000"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.serverName
+  : sttlab.database.windows.net
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.driverType
+  : Progress® DataDirect®
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.portNumber
+  : "1433"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionEnabled
+  : "false"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.otherProperties
+  : loginTimeout=60;
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.databaseName
+  : sqldb
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.password
+  : "{AES}xQJbA1N3SVslXYLJd7vQXHtoPSIUr5vmkgNS5mqAKjw="
