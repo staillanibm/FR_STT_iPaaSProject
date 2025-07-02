@@ -13,7 +13,7 @@
         <number name="createdDate" type="Long">1751448462924</number>
         <value name="lastModifiedBy">Stephane.Tailland@ibm.com</value>
         <value name="lastModifiedByUserId">914bb395afb842f9968286ada250c1e9</value>
-        <number name="lastModifiedDate" type="Long">1751448462924</number>
+        <number name="lastModifiedDate" type="Long">1751463351387</number>
       </record>
       <Boolean name="wMIODocTypeReplica">true</Boolean>
     </record>
@@ -30,7 +30,7 @@
         <record name="node_hints" javaclass="com.wm.util.Values">
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">Id</value>
+        <value name="field_name">id</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -455,5 +455,6 @@
       </record>
     </array>
     <value name="modifiable">true</value>
+    <value name="updateRSD">true</value>
   </record>
 </Values>
