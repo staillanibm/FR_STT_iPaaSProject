@@ -13,7 +13,7 @@
         <number name="createdDate" type="Long">1751448462924</number>
         <value name="lastModifiedBy">Stephane.Tailland@ibm.com</value>
         <value name="lastModifiedByUserId">914bb395afb842f9968286ada250c1e9</value>
-        <number name="lastModifiedDate" type="Long">1751463628193</number>
+        <number name="lastModifiedDate" type="Long">1751464008761</number>
       </record>
       <Boolean name="wMIODocTypeReplica">true</Boolean>
     </record>
