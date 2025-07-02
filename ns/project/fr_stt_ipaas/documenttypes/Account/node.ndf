@@ -13,7 +13,7 @@
         <number name="createdDate" type="Long">1751448462924</number>
         <value name="lastModifiedBy">Stephane.Tailland@ibm.com</value>
         <value name="lastModifiedByUserId">914bb395afb842f9968286ada250c1e9</value>
-        <number name="lastModifiedDate" type="Long">1751463372605</number>
+        <number name="lastModifiedDate" type="Long">1751463628193</number>
       </record>
       <Boolean name="wMIODocTypeReplica">true</Boolean>
     </record>
@@ -44,9 +44,8 @@
         </record>
         <value name="is_public">false</value>
         <value name="field_name">isDeleted</value>
-        <value name="field_type">object</value>
+        <value name="field_type">string</value>
         <value name="field_dim">0</value>
-        <value name="wrapper_type">java.lang.Boolean</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
