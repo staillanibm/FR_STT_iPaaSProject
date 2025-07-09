@@ -11,12 +11,6 @@ packages:
   version: 10.3.0.0.34
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
-- name: sttHelloWorld
-  version: "1.0"
-  gitServerName: fr_stt_github
-  gitUrl: https://github.com/staillanibm
-  gitUsername: staillanibm
-  gitBranch: main
 - name: sttGlobalVariables
   version: "1.0"
   gitServerName: fr_stt_github
@@ -209,10 +203,10 @@ configurationVariables:
   : project.fr_stt_ipaas.WmSalesforceRESTProvider.com_softwareag_cloudstreams_salesforce_rest_v60.connections:SalesforceV2
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.heartBeatInterval
   : "0"
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.connectTimeout
-  : "30000"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.validateAfterInactivity
   : "1000"
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.connectTimeout
+  : "30000"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.expireTimeout
   : "1000"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.maximumPoolSize
@@ -233,10 +227,10 @@ configurationVariables:
   : sttlab
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth_v20.authorizationHeaderInTokenRefresh
   : "false"
-  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.minimumPoolSize
-  : "1"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.networkProtocol
   : ""
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.minimumPoolSize
+  : "1"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.poolIncrementSize
   : "1"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.keepAliveInterval

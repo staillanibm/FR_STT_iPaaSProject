@@ -9,7 +9,6 @@
   <null name="replication_services"/>
   <record name="requires" javaclass="com.wm.util.Values">
     <value name="WmJDBCAdapter">10.3.0.0.34</value>
-    <value name="sttHelloWorld">1.0</value>
     <value name="sttGlobalVariables">1.0</value>
     <value name="WmSalesforceRESTProvider">10.7.0.0.187</value>
     <value name="sttCustomerManagement">1.0</value>
@@ -17,13 +16,13 @@
   <null name="listACL"/>
   <value name="webappLoad">yes</value>
   <value name="reloadWithDependentPackage">yes</value>
-  <value name="build">43</value>
+  <value name="build">44</value>
   <null name="description"/>
   <value name="created_date">18-06-2025 12:35:18 GMT</value>
   <null name="extendedProperties"/>
   <null name="target_server_version"/>
   <value name="isProjectPackage">true</value>
-  <value name="lastUpdated">2025-07-09T14:26:58.596493685Z</value>
+  <value name="lastUpdated">2025-07-09T15:39:22.610493304Z</value>
   <value name="wmProjectId">fl78b8b7c4a5c1ee45239d14</value>
   <value name="creator">Stephane Tailland</value>
 </Values>
