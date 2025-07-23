@@ -11,17 +11,17 @@ packages:
   version: 10.3.0.0.34
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
-- name: sttGlobalVariables
-  version: "1.0"
-  gitServerName: fr_stt_github
-  gitUrl: https://github.com/staillanibm
-  gitUsername: staillanibm
-  gitBranch: main
 - name: WmSalesforceRESTProvider
   version: 10.7.0.0.187
   wpmServer: https://packages.webmethods.io
   wpmRegistry: supported
 - name: sttCustomerManagement
+  version: "1.0"
+  gitServerName: fr_stt_github
+  gitUrl: https://github.com/staillanibm
+  gitUsername: staillanibm
+  gitBranch: main
+- name: sttGlobalVariables
   version: "1.0"
   gitServerName: fr_stt_github
   gitUrl: https://github.com/staillanibm
@@ -111,12 +111,24 @@ configurationVariables:
   : https://orgfarm-94e92d9500-dev-ed.develop.my.salesforce.com
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupBackoffSecs
   : "10"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.maximumPoolSize
+  : "10"
+  ? iscloudstreamsconnectorservice.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..operations..actions:queryAccounts.connectionAlias
+  : project.fr_stt_ipaas.WmSalesforceRESTProvider.com_softwareag_cloudstreams_salesforce_rest_v60.connections:SalesforceV2
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.heartBeatInterval
   : "0"
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.validateAfterInactivity
+  : "1000"
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.connectTimeout
+  : "30000"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.expireTimeout
   : "1000"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.maximumPoolSize
   : "10"
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.hostnameVerifier
+  : org.apache.http.conn.ssl.DefaultHostnameVerifier
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.dbType
+  : MSSQL
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.keyStore
   : ""
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.poolable
@@ -129,28 +141,52 @@ configurationVariables:
   : sttlab
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth_v20.authorizationHeaderInTokenRefresh
   : "false"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.minimumPoolSize
+  : "1"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.networkProtocol
+  : ""
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.poolIncrementSize
   : "1"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.keepAliveInterval
   : "300000"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth_v20.refreshToken
   : "{AES}hL8P5n6/+jhXtM1uxmCL3/ffnqRTB5NhOOwfCUFwxJqcBv4m8JMtLN0gab7W36kLRMJTS3wydy1GRBJy4HgI0oHWYSMh/nJDEKMZXRd/f7Huydkdxz5CebROyImJldqb"
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.socketStaleCheck
+  : "true"
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.startupBackoffSecs
+  : "10"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.poolable
+  : "true"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.datasourceClass
   : com.wm.dd.jdbcx.sqlserver.SQLServerDataSource
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.serverName
+  : sttlab.database.windows.net
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth.consumerId
   : 3MVG9dAEux2v1sLuFxnd1N_bXrRevKDz6OBgc4fIbBNTZ6iFStgrz62wNis2FflozuJIDrpZAhz6OaSHlJLLR
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.socketLinger
+  : "-1"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.connectionEnabled
   : "true"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.enableSNI
   : "true"
   ? iscloudstreamsconnectorservice.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..operations..actions:queryAccounts.virtualServiceName
   : WmCloudStreams.RestVS
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupRetryCount
+  : "0"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.poolIncrementSize
   : "1"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.expireTimeout
+  : "1000"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth_v20.authenticationServerUrl
   : https://login.salesforce.com/services/oauth2/token
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.transactionType
   : NO_TRANSACTION
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.reuseAddr
+  : "false"
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth.accessToken
+  : "{AES}vnu4mfjy3wQ2SaQzMDm96slu/ogc+m0fF6/O1S6ZpTVbi999Ix5WSODL9/oMUsgl345bM7qDlMnyXfAIftt6TiudSXfYKxPwerFFn/lfhDA7iXZBs5P1DUUbdtxmqDVmxyihS3c0/AxuUEye7/7SqGmK1wuN3U1rA1B0VhuZoUw="
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth.consumerSecret
+  : "{AES}TZM+ssmCoWnWo25N1h7b2hFfNkaShIiABrV0pGBaDYOybMjiLOevW+wGW/sIbrgxlMLqC1vaoIw2JG/XzC0QbGmK1wuN3U1rA1B0VhuZoUw="
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth_v20.authorizationServerUrl
   : https://login.salesforce.com/services/oauth2/authorize
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth_v20.authorizationHeaderPrefix
@@ -159,70 +195,34 @@ configurationVariables:
   : "8192"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.driverType
   : Progress® DataDirect®
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth_v20.accessTokenRefreshURL
+  : https://login.salesforce.com/services/oauth2/token
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.databaseName
   : sqldb
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth_v20.accessTokenRefreshURLRequest
+  : URL Query String
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.startupRetryCount
   : "0"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.timeoutType
   : auto
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.blockTimeout
   : "1000"
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.idleTimeout
-  : "-1"
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.enableCompression
-  : "false"
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.tcpNoDelay
-  : "false"
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.retryCount
-  : "4"
-  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.maximumPoolSize
-  : "10"
-  ? iscloudstreamsconnectorservice.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..operations..actions:queryAccounts.connectionAlias
-  : project.fr_stt_ipaas.WmSalesforceRESTProvider.com_softwareag_cloudstreams_salesforce_rest_v60.connections:SalesforceV2
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.validateAfterInactivity
-  : "1000"
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.connectTimeout
-  : "30000"
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.hostnameVerifier
-  : org.apache.http.conn.ssl.DefaultHostnameVerifier
-  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.dbType
-  : MSSQL
-  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.minimumPoolSize
-  : "1"
-  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.networkProtocol
-  : ""
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.socketStaleCheck
-  : "true"
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.startupBackoffSecs
-  : "10"
-  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.poolable
-  : "true"
-  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.serverName
-  : sttlab.database.windows.net
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.socketLinger
-  : "-1"
-  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupRetryCount
-  : "0"
-  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.expireTimeout
-  : "1000"
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.reuseAddr
-  : "false"
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth.accessToken
-  : "{AES}vnu4mfjy3wQ2SaQzMDm96slu/ogc+m0fF6/O1S6ZpTVbi999Ix5WSODL9/oMUsgl345bM7qDlMnyXfAIftt6TiudSXfYKxPwerFFn/lfhDA7iXZBs5P1DUUbdtxmqDVmxyihS3c0/AxuUEye7/7SqGmK1wuN3U1rA1B0VhuZoUw="
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth.consumerSecret
-  : "{AES}TZM+ssmCoWnWo25N1h7b2hFfNkaShIiABrV0pGBaDYOybMjiLOevW+wGW/sIbrgxlMLqC1vaoIw2JG/XzC0QbGmK1wuN3U1rA1B0VhuZoUw="
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth_v20.accessTokenRefreshURL
-  : https://login.salesforce.com/services/oauth2/token
-  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth_v20.accessTokenRefreshURLRequest
-  : URL Query String
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.minimumPoolSize
   : "1"
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.idleTimeout
+  : "-1"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.readTimeout
   : "30000"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.trustStore
   : ""
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.enableCompression
+  : "false"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth_v20.instanceURL
   : https://orgfarm-94e92d9500-dev-ed.develop.my.salesforce.com
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.tcpNoDelay
+  : "false"
+  ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.cn.retryCount
+  : "4"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:SalesforceV2.oauth_v20.scope
   : offline_access api refresh_token
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.blockingTimeout
