@@ -7,3 +7,16 @@ packages:
   gitUrl: https://github.com/staillanibm
   gitUsername: staillanibm
   gitBranch: main
+services:
+- serviceName: project.fr_stt_ipaas.integrations:processOrderFile
+  packages:
+  - name: FR_STT_iPaaSProject
+    version: "1.0"
+- serviceName: pub.json:documentToJSONString
+  packages:
+  - name: WmPublic
+    version: 11.1.0.0.2064
+- serviceName: pub.flow:debugLog
+  packages:
+  - name: WmPublic
+    version: 11.1.0.0.2064
