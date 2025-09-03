@@ -64,9 +64,8 @@
   <value name="retry_max">0</value>
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
-    <value name="createdBy">Stephane.Tailland@ibm.com</value>
-    <value name="createdDate">1756908132482</value>
-    <value name="lastModifiedDate">1756908132482</value>
+    <value name="lastModifiedBy">Stephane.Tailland@ibm.com</value>
+    <value name="lastModifiedDate">1756908415510</value>
     <value name="displayName">processOrderFile</value>
     <value name="description"></value>
     <record name="stepNodeHints" javaclass="com.wm.util.Values">
@@ -86,6 +85,11 @@
         <value name="nodePathNew">0</value>
         <number name="nodeIndex" type="Long">0</number>
         <number name="lineNumberForDebug" type="Long">1</number>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">0</value>
+        <number name="ui_step_index" type="Long">1</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
       </record>
       <record name="/1" javaclass="com.wm.util.Values">
         <null name="name"/>
@@ -106,6 +110,8 @@
         <number name="lineNumberForDebug" type="Long">2</number>
         <null name="mapSet"/>
         <null name="outputMapSet"/>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">1</value>
       </record>
     </record>
   </record>
