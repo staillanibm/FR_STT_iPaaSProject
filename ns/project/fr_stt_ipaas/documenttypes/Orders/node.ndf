@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="record" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="node_nsName">project.fr_stt_ipaas.documenttypes:Orders</value>
+    <value name="node_pkg">FR_STT_iPaaSProject</value>
+    <record name="node_hints" javaclass="com.wm.util.Values">
+      <record name="revisionData" javaclass="com.wm.util.Values">
+        <value name="createdBy">Stephane.Tailland@ibm.com</value>
+        <value name="createdByUserId">bd12bc1b4b254510b3eb6c0600e2428a</value>
+        <number name="createdDate" type="Long">1756907838401</number>
+        <value name="lastModifiedBy">Stephane.Tailland@ibm.com</value>
+        <value name="lastModifiedByUserId">bd12bc1b4b254510b3eb6c0600e2428a</value>
+        <number name="lastModifiedDate" type="Long">1756907838402</number>
+      </record>
+    </record>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <value name="schemaDomain">109e900032af4fa99f90b15d18006cd9</value>
+    <value name="originURI">Orders.xsd</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">tns:OrderBatch</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.example.com/orders</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">project.fr_stt_ipaas.documenttypes:docTypeRef_tns_OrderBatchType</value>
+      </record>
+    </array>
+    <value name="modifiable">false</value>
+    <value name="updateRSD">true</value>
+  </record>
+</Values>
