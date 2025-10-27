@@ -45,15 +45,68 @@
   <value name="retry_max">0</value>
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
-    <value name="createdBy">Stephane.Tailland@ibm.com</value>
-    <value name="createdDate">1761568607597</value>
-    <value name="lastModifiedDate">1761568607597</value>
+    <value name="lastModifiedBy">Stephane.Tailland@ibm.com</value>
+    <value name="lastModifiedDate">1761568751280</value>
     <value name="displayName">postFileS3</value>
     <value name="description"></value>
+    <array name="appList" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="providerName">WmAmazonS3Provider</value>
+        <value name="id">com.softwareag.cloudstreams.amazon.s3.aws4_v20060301</value>
+      </record>
+    </array>
     <record name="stepNodeHints" javaclass="com.wm.util.Values">
       <record name="/0" javaclass="com.wm.util.Values">
-        <value name="itemType">ALL</value>
-        <value name="name">NEW</value>
+        <value name="itemType">APPS</value>
+        <value name="id">com.softwareag.cloudstreams.amazon.s3.aws4_v20060301</value>
+        <value name="name">Amazon Simple Storage Service (S3)</value>
+        <value name="providerName">WmAmazonS3Provider</value>
+        <record name="operation" javaclass="com.wm.util.Values">
+          <value name="operationName">postFile</value>
+          <value name="isCustom">true</value>
+          <value name="operationType">actions</value>
+          <value name="connectionType">sagcloud</value>
+          <value name="projectName">project.fr_stt_ipaas</value>
+        </record>
+        <value name="appType">predefined</value>
+        <Boolean name="hasAccount">true</Boolean>
+        <value name="packageName">WmAmazonS3Provider</value>
+        <value name="description">Amazon Simple Storage Service (Amazon S3) is an Internet storage service. Amazon S3 allows you to store and retrieve data at any time from anywhere. You can accomplish these tasks using AWS Management Console's simple and intuitive web interface.</value>
+        <value name="version">2006-03-01 (AWS4)</value>
+        <value name="allowCustomOperations">true</value>
+        <value name="extensionName">WmAmazonS3ProviderExt</value>
+        <value name="certified">false</value>
+        <value name="type">REST</value>
+        <value name="registry">supported</value>
+        <value name="category">connector</value>
+        <value name="registeredDate">21/10/2025</value>
+        <Boolean name="installed">true</Boolean>
+        <Boolean name="latest">true</Boolean>
+        <Boolean name="allowDeleteApplication">false</Boolean>
+        <Boolean name="allowUpdateApplication">false</Boolean>
+        <record name="connection" javaclass="com.wm.util.Values">
+          <value name="connectionName">s3_aws_stt</value>
+          <value name="connectionType">sagcloud</value>
+          <null name="description"/>
+        </record>
+        <value name="connectionNSName">project.fr_stt_ipaas.WmAmazonS3Provider.com_softwareag_cloudstreams_amazon_s3_aws4_v20060301.connections:s3_aws_stt</value>
+        <value name="connectionType">sagcloud</value>
+        <Boolean name="accountReferenceResolved">true</Boolean>
+        <Boolean name="serviceReferenceResolved">true</Boolean>
+        <array name="map" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="mapDelete" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="transformer" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="lookupTransformer" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="mapSet" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="inputMap" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
+        <array name="outputMap" type="object" depth="1" javaclass="java.lang.Object">
+        </array>
       </record>
     </record>
   </record>
