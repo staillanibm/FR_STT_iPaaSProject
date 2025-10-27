@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<services>
+    <cloudstreamsCollectionKeys serviceName="WmCloudStreams.RestVS">
+        <servicesKeys>
+            <keyDetails collectionKey="project.fr_stt_ipaas.WmAmazonS3Provider.com_softwareag_cloudstreams_amazon_s3_aws4_v20060301.operations.actions:postFile" connectorServiceName="project.fr_stt_ipaas.WmAmazonS3Provider.com_softwareag_cloudstreams_amazon_s3_aws4_v20060301.operations.actions:postFile"/>
+        </servicesKeys>
+    </cloudstreamsCollectionKeys>
+</services>
