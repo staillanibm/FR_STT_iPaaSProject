@@ -46,7 +46,7 @@
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
     <value name="lastModifiedBy">Stephane.Tailland@ibm.com</value>
-    <value name="lastModifiedDate">1761568751280</value>
+    <value name="lastModifiedDate">1761568842106</value>
     <value name="displayName">postFileS3</value>
     <value name="description"></value>
     <array name="appList" type="record" depth="1">
@@ -107,6 +107,10 @@
         </array>
         <array name="outputMap" type="object" depth="1" javaclass="java.lang.Object">
         </array>
+      </record>
+      <record name="/1" javaclass="com.wm.util.Values">
+        <value name="itemType">CONTROLS</value>
+        <value name="name">TRANSFORM</value>
       </record>
     </record>
   </record>
