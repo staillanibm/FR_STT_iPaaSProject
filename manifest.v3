@@ -9,17 +9,18 @@
   <null name="replication_services"/>
   <record name="requires" javaclass="com.wm.util.Values">
     <value name="WmJDBCAdapter">10.3.0.0.34</value>
+    <value name="WmKafkaAdapter">9.6.0.0.26</value>
   </record>
   <null name="listACL"/>
   <value name="webappLoad">yes</value>
   <value name="reloadWithDependentPackage">yes</value>
-  <value name="build">23</value>
+  <value name="build">24</value>
   <null name="description"/>
   <value name="created_date">20-08-2025 05:45:36 GMT</value>
   <null name="extendedProperties"/>
   <null name="target_server_version"/>
   <value name="isProjectPackage">true</value>
-  <value name="lastUpdated">2025-10-30T06:35:07.940886527Z</value>
+  <value name="lastUpdated">2025-10-30T06:35:21.550074617Z</value>
   <value name="wmProjectId">fla510fd1c8d4193bafc2594</value>
   <value name="creator">Stephane Tailland</value>
   <value name="name">FR_STT_iPaaSProject</value>
