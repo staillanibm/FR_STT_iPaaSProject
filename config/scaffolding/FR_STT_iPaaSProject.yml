@@ -52,6 +52,18 @@ services:
     version: 9.6.0.0.26
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+- serviceName: project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections:stt_producer_2
+  packages:
+  - name: FR_STT_iPaaSProject
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmKafkaAdapter
+    version: 9.6.0.0.26
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
 - serviceName: project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections:stt_test_producer
   packages:
   - name: FR_STT_iPaaSProject
@@ -120,9 +132,25 @@ services:
   packages:
   - name: WmPublic
     version: 11.1.0.0.2097
+- serviceName: project.fr_stt_ipaas.integrations:sayHello
+  packages:
+  - name: FR_STT_iPaaSProject
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmKafkaAdapter
+    version: 9.6.0.0.26
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
 configurationVariables:
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionManagerSettings.poolIncrementSize
+  : "1"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.maximumPoolSize
   : "10"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionManagerSettings.startupRetryCount
+  : "0"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionSettings.password
   : "{AES}zxtjDVPnPMSWIVvNbTQB+H9awpHAyfXYCxLWEZQhnoE="
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionManagerSettings.startupBackoffSecs
@@ -141,12 +169,14 @@ configurationVariables:
   : ISO-8859-1
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.cx.aws_s3_url_style
   : Virtual Hosted
-  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionManagerSettings.maximumPoolSize
-  : "10"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.cn.providerUrl
   : https://s3.amazonaws.com/
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionManagerSettings.maximumPoolSize
+  : "10"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.pr.protocolVersion
   : HTTP/1.1
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionManagerSettings.expireTimeout
+  : "1000"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.pr.followServerRedirects
   : "true"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionEnabled
@@ -165,6 +195,8 @@ configurationVariables:
   : kafka:9092
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.kerberosServiceName
   : ""
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.requestTimeOut
+  : "30000"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionManagerSettings.poolIncrementSize
   : "1"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.pr.allowCircularRedirects
@@ -175,7 +207,11 @@ configurationVariables:
   : "1"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.requestTimeOut
   : "30000"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionManagerSettings.poolable
+  : "false"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.keyStoreAlias
+  : ""
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.kerberosServiceName
   : ""
   ? iscloudstreamsconnectorservice.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..operations..actions:postFile.connectionAlias
   : project.fr_stt_ipaas.WmAmazonS3Provider.com_softwareag_cloudstreams_amazon_s3_aws4_v20060301.connections:s3_aws_stt
@@ -183,18 +219,24 @@ configurationVariables:
   : sa
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.blockTimeout
   : "1000"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.sendBufferSize
+  : "131072"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.partitionerClass
+  : ""
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionSettings.portNumber
   : "1433"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.clientID
+  : stt_producer_2
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.connectionEnabled
   : "true"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.pr.serverRedirectMax
   : "5"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.compressionType
   : none
-  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.partitionerClass
-  : ""
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.jaasConfig
   : "{AES}6/CpVOaSqAjExhC8CzpJc5jyBodFxpqjXI/3NWfCL6s0XCpXNMhTj/I3iDIhMRccvr6yojqZyEbj1Uf5JaNyd/gK9Dc2JDl6FPQKGGG3jUwVybJcW8l2TJhRbqU+iH5q7eX9ZL5s8x6xhRDGdRVqjN134P5Ie7t1crIAENrV8Nc="
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.partitionerClass
+  : ""
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.sendBufferSize
   : "131072"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionManagerSettings.poolable
@@ -205,18 +247,28 @@ configurationVariables:
   : "1000"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionSettings.otherProperties
   : loginTimeout=60;
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.compressionType
+  : none
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.cn.enableSNI
   : "true"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.batchSize
+  : "16384"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionManagerSettings.startupRetryCount
   : "0"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.batchSize
   : "16384"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionEnabled
+  : "false"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionSettings.driverType
   : Progress® DataDirect®
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionSettings.trustStore
   : ""
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionManagerSettings.blockingTimeout
   : "1000"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionManagerSettings.minimumPoolSize
+  : "1"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionManagerSettings.maximumPoolSize
+  : "10"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.cn.validateAfterInactivity
   : "1000"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.clientID
@@ -227,20 +279,28 @@ configurationVariables:
   : "2147483647"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.ackIndicator
   : "0"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.ackIndicator
+  : "0"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.trustStoreAlias
   : ""
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.valueSerializerClass
+  : com.wm.adapter.wmkafka.idata.IDataSerializer
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.pr.useExpectCont
   : "true"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.cn.tcpNoDelay
   : "false"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionManagerSettings.startupBackoffSecs
   : "10"
-  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionManagerSettings.poolable
-  : "true"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.keySerializerClass
+  : com.wm.adapter.wmkafka.idata.IDataSerializer
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.startupBackoffSecs
   : "10"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionManagerSettings.poolable
+  : "true"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionSettings.transactionType
   : NO_TRANSACTION
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionManagerSettings.startupBackoffSecs
+  : "10"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.cn.sockBuffSize
   : "8192"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.startupRetryCount
@@ -257,6 +317,12 @@ configurationVariables:
   : Cloudstreams
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.securityProtocol
   : SASL_PLAINTEXT
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.securityProtocol
+  : SASL_PLAINTEXT
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.keyStoreAlias
+  : ""
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionManagerSettings.blockingTimeout
+  : "1000"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionManagerSettings.expireTimeout
   : "1000"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.valueSerializerClass
@@ -271,14 +337,22 @@ configurationVariables:
   : "false"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.pr.useChunking
   : "false"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.serverList
+  : kafka:9092
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionManagerSettings.minimumPoolSize
   : "1"
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.cn.retryCount
   : "4"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.jaasConfig
+  : "{AES}6/CpVOaSqAjExhC8CzpJc5jyBodFxpqjXI/3NWfCL6s0XCpXNMhTj/I3iDIhMRccvr6yojqZyEbj1Uf5JaNyd/gK9Dc2JDl6FPQKGGG3jUwVybJcW8l2TJhRbqU+iH5q7eX9ZL5s8x6xhRDGdRVqjN134P5Ie7t1crIAENrV8Nc="
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.maxRetry
+  : "2147483647"
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.sqlserver_ctb_ipaas.connectionSettings.datasourceClass
   : com.wm.dd.jdbcx.sqlserver.SQLServerDataSource
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.poolIncrementSize
   : "1"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.otherProperties
+  : sasl.mechanism=PLAIN;
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.kafkaVersion
   : v11+
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.cn.readTimeout
@@ -289,6 +363,10 @@ configurationVariables:
   : none
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.minimumPoolSize
   : "1"
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.trustStoreAlias
+  : ""
+  ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_producer_2.connectionSettings.kafkaVersion
+  : v11+
   ? artConnection.FR_STT_iPaaSProject.project.fr_stt_ipaas.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.stt_test_producer.connectionSettings.otherProperties
   : sasl.mechanism=PLAIN;
   ? cloudstreamsconnection.project..fr_stt_ipaas..WmAmazonS3Provider..com_softwareag_cloudstreams_amazon_s3_aws4_v20060301..connections:s3_aws_stt.cn.socketLinger
