@@ -12,6 +12,7 @@ packages:
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
 - name: WmKafkaAdapter
+  version: 9.6.0.0.26
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
 services:
